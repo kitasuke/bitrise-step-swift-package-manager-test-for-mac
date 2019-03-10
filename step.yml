@@ -75,11 +75,3 @@ inputs:
       value_options:
         - "yes"
         - "no"
-
-outputs:
-  - BITRISE_SWIFT_TEST_RESULT: null
-    opts:
-      title: Result of the tests. 'succeeded' or 'failed'.
-      value_options:
-        - succeeded
-        - failed

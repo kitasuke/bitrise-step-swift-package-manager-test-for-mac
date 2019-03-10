@@ -5,7 +5,6 @@ import (
 	"os"
 	"strings"
 
-	"github.com/bitrise-io/go-utils/command"
 	"github.com/bitrise-io/go-utils/log"
 	"github.com/kitasuke/go-swift/swift"
 	"github.com/kitasuke/go-swift/utility"
@@ -15,8 +14,6 @@ const (
 	BuildPathEnvKey   = "build_path"
 	IsSkipBuildEnvKey = "is_skip_build"
 	IsParallelEnvKey  = "is_parallel"
-
-	BitriseSwiftTestResultKey = "BITRISE_SWIFT_TEST_RESULT"
 )
 
 // ConfigModel ...
@@ -95,19 +92,7 @@ func validateRequiredInputWithOptions(value, key string, options []string) error
 	return nil
 }
 
-// ExportEnvironmentWithEnvman ...
-func ExportEnvironmentWithEnvman(keyStr, valueStr string) error {
-	return command.New("envman", "add", "--key", keyStr).SetStdin(strings.NewReader(valueStr)).Run()
-}
-
-func exportTestResult(status string) {
-	if err := ExportEnvironmentWithEnvman(BitriseSwiftTestResultKey, status); err != nil {
-		log.Warnf("Failed to export: %s, error: %s", BitriseSwiftTestResultKey, err)
-	}
-}
-
 func failf(format string, v ...interface{}) {
-	exportTestResult("failed")
 	log.Errorf(format, v...)
 	os.Exit(1)
 }
@@ -149,6 +134,4 @@ func main() {
 	if err := testCommandModel.Run(); err != nil {
 		failf("Test failed, error: %s", err)
 	}
-
-	exportTestResult("succeeded")
 }

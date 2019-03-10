@@ -35,11 +35,6 @@ workflows:
           inputs:
             - is_skip_build: "no"
             - is_parallel: "yes"
-      - script:
-          title: output test
-          is_always_run: true
-          inputs:
-            - content: 'echo "BITRISE_SWIFT_TEST_RESULT: ${BITRISE_SWIFT_TEST_RESULT}"'
   go-tests:
     steps:
       - script:

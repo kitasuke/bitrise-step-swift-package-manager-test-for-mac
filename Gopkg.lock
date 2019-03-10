@@ -31,7 +31,6 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/bitrise-io/go-utils/command",
     "github.com/bitrise-io/go-utils/log",
     "github.com/kitasuke/go-swift/swift",
     "github.com/kitasuke/go-swift/utility",
