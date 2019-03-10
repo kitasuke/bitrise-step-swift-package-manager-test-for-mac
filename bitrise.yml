@@ -48,9 +48,7 @@ workflows:
             - content: |-
                 #!/bin/bash
                 set -ex
-                if [ ! -e vendor ]; then
-                  make dep
-                fi
+                make dep
       - script:
           title: go lint
           inputs:
