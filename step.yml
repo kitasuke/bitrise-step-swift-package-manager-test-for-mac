@@ -36,9 +36,6 @@ project_type_tags:
 # https://github.com/bitrise-io/bitrise/blob/master/_docs/step-development-guideline.md
 type_tags:
   - test
-dependencies:
-  - manager: _
-    name: xcode
 deps:
   check_only:
     - name: xcode
