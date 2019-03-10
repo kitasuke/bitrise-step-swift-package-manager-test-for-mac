@@ -11,22 +11,21 @@
     "errorutil",
     "log",
     "pathutil",
-    "stringutil",
   ]
   pruneopts = ""
   revision = "2a09aab8380d7842750328aebd5671bcccea89c8"
 
 [[projects]]
   branch = "master"
-  digest = "1:8d4ca2635ed0e2af5332818f1fb03ce03bb86c5018121a355d6c118140627bc7"
-  name = "github.com/bitrise-tools/go-xcode"
+  digest = "1:b2e56f7cfd3fd00284143de86560623f059cd5b002b927233b1acea65e0360ba"
+  name = "github.com/kitasuke/go-swift"
   packages = [
     "models",
+    "swift",
     "utility",
-    "xcodebuild",
   ]
   pruneopts = ""
-  revision = "b3f7172f910693d60973a07b61db757aca81f778"
+  revision = "d63d7d17a4f0c4934c4ab29feb3d6d796cd7d5c7"
 
 [solve-meta]
   analyzer-name = "dep"
@@ -34,10 +33,8 @@
   input-imports = [
     "github.com/bitrise-io/go-utils/command",
     "github.com/bitrise-io/go-utils/log",
-    "github.com/bitrise-io/go-utils/pathutil",
-    "github.com/bitrise-io/go-utils/stringutil",
-    "github.com/bitrise-tools/go-xcode/utility",
-    "github.com/bitrise-tools/go-xcode/xcodebuild",
+    "github.com/kitasuke/go-swift/swift",
+    "github.com/kitasuke/go-swift/utility",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
