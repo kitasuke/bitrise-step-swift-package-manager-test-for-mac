@@ -19,7 +19,7 @@ const (
 // ConfigModel ...
 type ConfigModel struct {
 	// Project Parameters
-	BuildPath string
+	buildPath string
 
 	// Test Run Configs
 	isSkipBuild string
@@ -30,7 +30,7 @@ func (configs ConfigModel) print() {
 	fmt.Println()
 
 	log.Infof("Project Parameters:")
-	log.Printf("- BuildPath: %s", configs.BuildPath)
+	log.Printf("- BuildPath: %s", configs.buildPath)
 
 	fmt.Println()
 	log.Infof("Test Run Configs:")
@@ -41,7 +41,7 @@ func (configs ConfigModel) print() {
 func createConfigsModelFromEnvs() ConfigModel {
 	return ConfigModel{
 		// Project Parameters
-		BuildPath: os.Getenv(BuildPathEnvKey),
+		buildPath: os.Getenv(BuildPathEnvKey),
 
 		// Test Run Configs
 		isSkipBuild: os.Getenv(IsSkipBuildEnvKey),
@@ -125,7 +125,7 @@ func main() {
 
 	// setup CommandModel for test
 	testCommandModel := swift.NewTestCommand()
-	testCommandModel.SetBuildPath(configs.BuildPath)
+	testCommandModel.SetBuildPath(configs.buildPath)
 	testCommandModel.SetSkipBuild(isSkipBuild)
 	testCommandModel.SetIsParallel(isParallel)
 
