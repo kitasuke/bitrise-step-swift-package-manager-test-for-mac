@@ -58,7 +58,6 @@ inputs:
         A build path, relative to the working directory.
       is_expand: true
       is_required: false
-      value_options: []
   - is_skip_build: "no"
     opts:
       title: Skip build
